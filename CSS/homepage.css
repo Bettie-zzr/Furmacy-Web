@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Karla:wght@400;600;700&display=swap');
+
+body{
+    background: #ffffff;
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+}
+
+/* header */
+header {
+    width: 100%;
+}
+
+.first_row {
+    height: 32px;
+    background-color: #1C6EEF;
+}
+
+.second_row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8% 5%;
+}
+
+.logo_group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo_group h1 {
+    font-family: 'Acme', sans-serif;
+    font-size: 32px;
+    margin: 0;
+}
+
+.nav_menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+
+.nav_menu a {
+    font-family: 'Acme', sans-serif;
+    font-size: 24px;
+    color: #000000;
+}
+
+.header_icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.header_icons img {
+    width: 24px;
+}
+
+/*search row*/
+.third_row {
+    background-color: #1C6EEF;
+    padding: 0.6% 0;
+    display:flex;
+    justify-content: center;
+}
+
+/*search bar*/
+.third_row  input{
+    width: 32%;
+    padding: 0.6% 1.5%;
+    border-radius: 50px;
+    border: 3px solid #000000;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+
+/* hero section */
+.hero_section {
+    padding: 1% 0% 0% 5%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero_text {
+    width: 42%;
+}
+
+.hero_text h1 {
+    font-family: 'Acme', sans-serif;
+    font-size: 64px;
+    line-height: 1.5;
+    margin: 0 0 6% 0;
+}
+
+.hero_text p {
+    font-family: 'Karla', sans-serif;
+    font-size: 22px;
+    line-height: 1.4;
+    margin: 0 0 12% 0;
+}
+
+.pink_button {
+    background-color: #F57CB6;
+    color:#ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 3% 10%;
+    font-family: 'Karla', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.hero_image {
+    width: 50%;
+}
+
+/* color block */
+.color_block {
+    background-color: #1C6EEF;
+    height: 32px;
+}
+
+/* category section */
+.category_section {
+    padding: 4% 5%;
+}
+
+.category_section h2 {
+    font-family: 'Acme', sans-serif;
+    font-size: 46px;
+    margin-bottom: 5%;
+}
+
+.category_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 32px;
+}
+
+.category_card {
+    width: 47%;
+    background-color: #F4F4F4;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.category_card img {
+    width: 36%;
+    display: block;
+}
+
+.category_card h3 {
+    width: 48%;
+    font-family: 'Acme', sans-serif;
+    font-size: 36px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+/* brand section */
+
+/* best seller section */
+.product_section {
+    padding: 0 6% 10% 6%;
+}
+
+.product_section h2 {
+    font-family: 'Acme', sans-serif;
+    font-size: 46px;
+    margin-top: 5%;
+}
+
+.product_card {
+    width: 30%;
+    background-color: #F4F4F4;
+    border-radius: 16px;
+    padding: 6% 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.product_card img {
+    width: 75%;
+    margin-bottom: 12%;
+}
+
+.product_card .pink_button {
+    font-size: 16px;
+    padding: 4% 10%;
+}
+
+/* review section */
+
+/* footer */
