@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Karla:wght@400;600;700&display=swap');
+
+body{
+    background: #ffffff;
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+}
+
+/* header */
+header {
+    width: 100%;
+}
+
+.first_row {
+    height: 32px;
+    background-color: #1C6EEF;
+}
+
+.second_row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8% 5%;
+}
+
+.logo_group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo_group h1 {
+    font-family: 'Acme', sans-serif;
+    font-size: 32px;
+    margin: 0;
+}
+
+.nav_menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+
+.nav_menu a {
+    font-family: 'Acme', sans-serif;
+    font-size: 24px;
+    color: #000000;
+}
+
+.header_icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.header_icons img {
+    width: 24px;
+}
+
+/*search row*/
+.third_row {
+    background-color: #1C6EEF;
+    padding: 0.6% 0;
+    display:flex;
+    justify-content: center;
+}
+
+/*search bar*/
+.third_row  input{
+    width: 32%;
+    padding: 0.6% 1.5%;
+    border-radius: 50px;
+    border: 3px solid #000000;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}

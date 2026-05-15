@@ -17,7 +17,6 @@ header {
 }
 
 .second_row {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,6 +27,10 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.logo {
+    width: 15%;
 }
 
 .logo_group h1 {
@@ -129,7 +132,7 @@ header {
 
 /* category section */
 .category_section {
-    padding: 4% 5%;
+    padding: 4% 6%;
 }
 
 .category_section h2 {
@@ -152,7 +155,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-sizing: border-box;
 }
 
 .category_card img {
@@ -172,36 +174,76 @@ header {
 
 /* best seller section */
 .product_section {
-    padding: 0 6% 10% 6%;
+    padding: 4% 0% 4% 6%;
 }
 
 .product_section h2 {
     font-family: 'Acme', sans-serif;
     font-size: 46px;
-    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.product_grid {
+    display: flex;
+    gap: 7%;
+    overflow-x: auto;
 }
 
 .product_card {
-    width: 30%;
+    width: 400px;
+    flex-shrink: 0;
     background-color: #F4F4F4;
-    border-radius: 16px;
-    padding: 6% 4%;
+    border-radius: 40px;
+    padding: 3% 2.5%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
 }
 
 .product_card img {
-    width: 75%;
+    width: 100%;
+    border-radius: 40px;
     margin-bottom: 12%;
 }
 
+.product_card h4 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+.product_card p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 10%;
+}
+
 .product_card .pink_button {
-    font-size: 16px;
+    font-size: 18px;
     padding: 4% 10%;
 }
 
 /* review section */
+.review_section {
+    padding: 4% 6%;
+}
+
+.review_section h2 {
+    font-family: 'Acme', sans-serif;
+    font-size: 46px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.review_box {
+    
+}
+
 
 /* footer */
+footer {
+    background-color: #1C6EEF;
+}
