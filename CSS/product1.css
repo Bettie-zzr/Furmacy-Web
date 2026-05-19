@@ -207,7 +207,9 @@ footer h2 {
 }
 
 /*main*/
-/*-------main--------*/
+/*=========main========*/
+
+/*--breadcrumb---*/
 .product1_page {
     padding: 2% 6% 4% 6%;
 }
@@ -236,3 +238,5 @@ footer h2 {
     color: #1C6EEF;
     text-decoration: none;
 }
+
+/*--product section--*/
