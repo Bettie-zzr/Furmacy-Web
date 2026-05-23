@@ -1,0 +1,148 @@
+.cart_page {
+    padding: 2% 6% 4% 6%;
+}
+
+.page_title {
+    font-family: 'Acme', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    margin: 5% 0 3% 0;
+}
+
+.cart_items {
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.cart_item {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    gap: 3%;
+    background: #f4f4f4;
+    border-radius: 16px;
+    padding: 2.5%;
+    margin-bottom: 3%;
+}
+
+.cart_item_img {
+    width: 15%;
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+.cart_item_info {
+    flex: 1;
+}
+
+.cart_item_head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.cart_item_name {
+    font-family: 'Acme', sans-serif;
+    font-size: 24px;
+    margin: 0;
+}
+
+.cart_item_price {
+    font-family: 'Karla', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cart_item_size {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    color: #00000085;
+    margin: 0 0 3% 0;
+}
+
+.cart_item_control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.quantity_box {
+    display: flex;
+    align-items: center;
+    border: 2px solid #1C6EEF;
+    border-radius: 50px;
+    width: 40%;
+    overflow: hidden;
+}
+
+.quantity_box button {
+    background: none;
+    border: none;
+    color: #1C6EEF;
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 1% 6%;
+    cursor: pointer;
+}
+
+.quantity_box input {
+    background-color: #f4f4f4;
+    flex: 1;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    color: #1C6EEF;
+}
+
+.cart_item_delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.cart_item_delete img {
+    width: 28px;
+    background-color: #f4f4f4;
+}
+
+/*price summary*/
+.cart_summary {
+    margin: 0 auto;
+
+    width: 60%;
+    background: #f4f4f4;
+    border-radius: 16px;
+    padding: 3%;
+    margin-bottom: 4%;
+}
+
+.summary_row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    font-family: 'Acme', sans-serif;
+    font-size: 24px;
+    margin-bottom: 3%;
+}
+
+/*check out button*/
+.checkout_btn {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #F57CB6;
+    color: #ffffff;
+    border-radius: 50px;
+    font-family: 'Acme', sans-serif;
+    font-size: 28px;
+    text-decoration: none;
+}
