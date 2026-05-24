@@ -12,7 +12,8 @@
 .cart_items {
     margin-bottom: 2%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cart_item {

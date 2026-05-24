@@ -210,7 +210,8 @@ footer h2 {
 /*=========main========*/
 
 /*--breadcrumb---*/
-.product1_page {
+.product1_page,
+.product2_page {
     padding: 2% 6% 4% 6%;
 }
 
@@ -416,6 +417,10 @@ footer h2 {
 
 .cart_popup.is_open {
     display: block;
+}
+
+.cart_popup .quantity_box input {
+    background-color: #f4f4f4;
 }
 
 .cart_popup_inner {

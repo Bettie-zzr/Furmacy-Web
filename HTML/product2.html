@@ -4,11 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pet Furmacy</title>
-        <link rel="stylesheet" href="../CSS/product2.css">
+        <link rel="stylesheet" href="../CSS/product1.css">
     </head>
 
     <body>
-        <script src="../JS/listpage.js"></script>
 
         <!--header section-->
         <header>
@@ -42,7 +41,7 @@
         </header>
 
         <!--====main section====-->
-        <main class="product1_page">
+        <main class="product2_page">
 
             <!--breadcrumb-->
             <nav class="breadcrumb">
@@ -52,7 +51,61 @@
                     <li>Malaseb Medicated Shampoo</li>
                 </ul>
             </nav>
+
+            <!--product section-->
+            <section class="product_section">
+
+                <div class="product_image">
+                    <img src="../Image/product2/malaseb_250.png">
+                </div>
+
+                <div class="product">
+                    <div>
+                        <h2 class="product_title">Malaseb Medicated Shampoo</h2>
+                        <img src="../Image/product2/rating.png">
+                        <p class="product_price">$53.00</p>
+                        <p class="product_description">
+                            Malaseb® Medicated Shampoo is a treatment for seborrhoeic dermatitis associated with Staphylococcus intermedius and Malassezia pachydermatis and is an aid in the treatment of dermatophytosis (ringworm) in pets.This product is not recommended for use in rabbits or species other than dogs or cats.
+                        </p>
+                    </div>
+
+                    <div class="product_size">
+                        <p>Size:</p>
+                        <button class="size_btn">250 ML</button>
+
+                        <p>Quantity</p>
+                        <div class="quantity_box">
+                            <button class="qty_minus">-</button>
+                            <input type="text" value="1">
+                            <button class="qty_plus">+</button>
+                        </div>
+                    </div>
+
+                    <button class="add_to_cart"
+                        data-name="Malaseb Medicated Shampoo"
+                        data-price="53"
+                        data-size="250 ML"
+                        data-image="../Image/product2/malaseb_250.png">ADD TO CART</button>
+                </div>
+            </section>
+
+            <!--more detail section-->
+            <section class="more_detail">
+                <details>
+                    <summary>More Detail</summary>
+                    <p>
+                        Directions for use:<br>
+                        Wet the animal thoroughly with clean water.
+                        Apply Malaseb® Medicated Shampoo to your pet at several points and massage into the coat.
+                        Using a sponge may assist with lathering and penetration of the shampoo through the coat. 
+                        Use approximately 1-2 mL per kg of body weight.
+                        Leave the shampoo on for 10 minutes. Ensure your pet is supervised during this time to avoid ingestion or inhalation of the shampoo.
+                        Rinse thoroughly with clean water.
+                    </p>
+                </details>
+            </section>
         </main>
+
         
         <!-- footer -->
         <footer>
@@ -127,4 +180,19 @@
         </footer>
 
         <p class="copyright">© 2026, Pet Furmacy</p>
+
+        <div class="cart_popup">
+            <div class="cart_popup_inner">
+
+                <div class="cart_items"></div>
+
+                <div class="cart_popup_btns">
+                    <button class="keep_shopping">KEEP SHOPPING</button>
+                    <a href="cart.html" class="go_to_cart">GO TO CART</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="../JS/cart.js"></script>
+  
     </body>

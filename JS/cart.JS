@@ -12,6 +12,42 @@ function cartTotal() {
         return sum + item.price * item.qty;
     }, 0);
 }
+/*--------put cart info to cart--------*/
+function renderItemsInto(box) {
+    box.innerHTML = getCart().map(function (item) {
+        return `
+            <div class="cart_item">
+                <img class="cart_item_img" src="${item.image}" alt="${item.name}">
+                <div class="cart_item_info">
+                    <div class="cart_item_head">
+                        <h3 class="cart_item_name">${item.name}</h3>
+                        <p class="cart_item_price">$${item.price}</p>
+                    </div>
+                    <p class="cart_item_size">Size: ${item.size}</p>
+                    <div class="cart_item_control">
+                        <div class="quantity_box">
+                            <button class="qty_minus">-</button>
+                            <input type="text" value="${item.qty}">
+                            <button class="qty_plus">+</button>
+                        </div>
+                        <button class="cart_item_delete">
+                            <img src="../Image/product1/delete.png" alt="delete">
+                        </button>
+                    </div>
+                </div>
+            </div>`;
+    }).join('');
+}
+
+/*--------- add .cart_items to related pages ---------*/
+var itemsBox = document.querySelector('.cart_items');
+if (itemsBox) {
+    renderItemsInto(itemsBox);
+    document.querySelectorAll('.summary_row span:last-child').forEach(function(el) {
+        el.textContent = '$' + cartTotal();
+    });
+}
+
 
 /*--------- add to cart + cart pop up page ----------*/
 var addBtn = document.querySelector(' .add_to_cart');
@@ -27,6 +63,8 @@ if (addBtn) {
             qty: Number(qtyInput.value) || 1
         });
         saveCart(cart);
+
+        if (itemsBox) renderItemsInto(itemsBox);
         document.querySelector(' .cart_popup').classList.add('is_open');
         document.body.style.overflow = 'hidden'; //lock the background
     });
@@ -41,42 +79,8 @@ if(keepBtn) {
     });
 }
 
-
-/* -------- cartpage/ based on localStorage list order and price -------- */
-var itemsBox = document.querySelector('.cart_items');
-if (itemsBox) {
-    itemsBox.innerHTML = getCart().map(function(item) {
-        return `
-        <div class = "cart_item">
-            <img class="cart_item_img" src="${item.image}" alt="${item.name}">
-            <div class="cart_item_info">
-                <div class="cart_item_head">
-                    <h3 class="cart_item_name">${item.name}</h3>
-                    <p class="cart_item_price">$${item.price}</p>
-                </div>
-                <p class="cart_item_size">Size: ${item.size}</p>
-                <div class="cart_item_control">
-                    <div class="quantity_box">
-                        <button class="qty_minus">-</button>
-                        <input type="text" value="${item.qty}">
-                        <button class="qty_plus">+</button>
-                    </div>
-                    <button class="cart_item_delete">
-                        <img src="../Image/product1/delete.png" alt="delete">
-                    </button>
-               </div>
-            </div>
-        </div> `;
-    }).join('');
-
-    //Cart total/ Sub total ====total
-    document.querySelectorAll('.summary_row space::last-child').forEach(function(el) {
-        el.textContent = '$' + cartTotal();
-    });
-}
-
 /*--- checkoutpage/successpage: Pay now ------*/
-var payBtn = document.querySelector(' .paynow');
+var payBtn = document.querySelector(' .pay_now');
 if (payBtn) {
     payBtn.addEventListener('click', function() {
         location.href = "success.html";
