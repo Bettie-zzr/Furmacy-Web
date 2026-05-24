@@ -1,0 +1,91 @@
+/*------ localStorage ------*/
+function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || []
+}
+
+function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function cartTotal() {
+    return getCart().reduce(function (sum, item) {
+        return sum + item.price * item.qty;
+    }, 0);
+}
+
+/*--------- add to cart + cart pop up page ----------*/
+var addBtn = document.querySelector(' .add_to_cart');
+if (addBtn) {
+    addBtn.addEventListener('click', function() {
+        var qtyInput = document.querySelector(' .product_size .quantity_box input');
+        var cart = getCart();
+        cart.push({
+            name: addBtn.dataset.name,
+            price: Number(addBtn.dataset.price),
+            size: addBtn.dataset.size,
+            image: addBtn.dataset.image,
+            qty: Number(qtyInput.value) || 1
+        });
+        saveCart(cart);
+        document.querySelector(' .cart_popup').classList.add('is_open');
+        document.body.style.overflow = 'hidden'; //lock the background
+    });
+}
+
+/*-------- keep shopping + close pop up page ------*/
+var keepBtn = document.querySelector(' .keep_shopping');
+if(keepBtn) {
+    keepBtn.addEventListener('click', function () {
+        document.querySelector('.cart_popup').classList.remove('is_open');
+        document.body.style.overflow = ''; //remove the lock
+    });
+}
+
+
+/* -------- cartpage/ based on localStorage list order and price -------- */
+var itemsBox = document.querySelector('.cart_items');
+if (itemsBox) {
+    itemsBox.innerHTML = getCart().map(function(item) {
+        return `
+        <div class = "cart_item">
+            <img class="cart_item_img" src="${item.image}" alt="${item.name}">
+            <div class="cart_item_info">
+                <div class="cart_item_head">
+                    <h3 class="cart_item_name">${item.name}</h3>
+                    <p class="cart_item_price">$${item.price}</p>
+                </div>
+                <p class="cart_item_size">Size: ${item.size}</p>
+                <div class="cart_item_control">
+                    <div class="quantity_box">
+                        <button class="qty_minus">-</button>
+                        <input type="text" value="${item.qty}">
+                        <button class="qty_plus">+</button>
+                    </div>
+                    <button class="cart_item_delete">
+                        <img src="../Image/product1/delete.png" alt="delete">
+                    </button>
+               </div>
+            </div>
+        </div> `;
+    }).join('');
+
+    //Cart total/ Sub total ====total
+    document.querySelectorAll('.summary_row space::last-child').forEach(function(el) {
+        el.textContent = '$' + cartTotal();
+    });
+}
+
+/*--- checkoutpage/successpage: Pay now ------*/
+var payBtn = document.querySelector(' .paynow');
+if (payBtn) {
+    payBtn.addEventListener('click', function() {
+        location.href = "success.html";
+    });
+}
+
+/*----- sucess: clear cart ------*/
+var successText = document.querySelector('.success_text');
+if (successText) {
+    successText.textContent = 'Successfully paid $' + cartTotal();
+    localStorage.removeItem('cart');
+}
