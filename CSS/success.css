@@ -1,0 +1,28 @@
+.success_page {
+    padding: 6% 6% 22% 6%;
+    text-align: center;
+}
+
+.success_icon {
+    width: 140px;
+    margin-bottom: 2%;
+}
+
+.success_title {
+    font-family: 'Acme', sans-serif;
+    font-size: 36px;
+    margin: 0 0 1% 0;
+}
+
+.success_text {
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    margin: 0 0 4% 0;
+}
+
+.back_home {
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    color: #1C6EEF;
+    text-decoration: underline;
+}

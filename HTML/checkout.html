@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pet Furmacy</title>
+        <link rel="stylesheet" href="../CSS/global.css">
+        <link rel="stylesheet" href="../CSS/checkout.css">
+    </head>
+
+    <body>
+        <script src="../JS/listpage.js"></script>
+
+        <!--header section-->
+        <header>
+            <div class="first_row"></div>
+
+            <section class="second_row">
+
+                <div class="logo_group">
+                    <img class="logo" src="../Image/homepage_image/logo.png" alt="logo">
+                    <h1>Furmacy</h1>
+                </div>
+                
+                <nav class="nav_menu">
+                    <a href="#">DOGS</a>
+                    <a href="#">CATS</a>
+                    <a href="#">NEW ARRIVAL</a>
+                    <a href="#">ON SALE</a>
+                </nav>
+
+                <div class="header_icons">
+                    <img src="../Image/homepage_image/user.png" alt="login">
+                    <img src="../Image/homepage_image/cart.png" alt="cart">
+                </div>
+                
+            </section>
+
+            <div class ="third_row">
+                <input type="text" placeholder="Search..">
+            </div>
+
+        </header>
+
+        <!--====main section====-->
+        <main class="checkout_page">
+
+            <!--breadcrumb-->
+            <nav class="breadcrumb">
+                <ul>
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href=listpage.html>DOGS</a></li>
+                    <li><a href="product1.html">Antinol Plus 720 capsules</a></li>
+                    <li><a href=cart.html>CART</a></li>
+                    <li>CHECK OUT</li>
+                </ul>
+            </nav>
+
+            <div class="checkout_layout">
+
+                <!--=====left side=====-->
+                <section class="checkout_form">
+
+                    <!--express checkout-->
+                    <p class="express_label">Express checkout</p>
+                    <div class="express_btns">
+                        <button class="express_pay shop_pay">Pay</button>
+                        <button class="express_pay g_pay">G pay</button>
+                    </div>
+
+                    <div class="or_divider"><span>OR</span></div>
+
+                    <!--contact-->
+                    <div class="form_head">
+                        <h3>Contact</h3>
+                        <a href="#">sign in</a>
+                    </div>
+
+                    <input type="text" class="form_input" placeholder="Email or mobile phone number">
+
+                    <label class="checkbox_row">
+                        <input type="checkbox" checked> Email me the news and the offers
+                    </label>
+
+                    <!--delivery-->
+                    <div class="form_head">
+                        <h3>Delivery</h3>
+                        <span>-</span>
+                    </div>
+
+                    <div class="ship_toggle">
+                        <button class="ship_option active">Ship</button>
+                        <button class="ship_option">Pickup</button>
+                    </div>
+
+                    <select class="form_input">
+                        <option>Country/Region</option>
+                    </select>
+
+                    <div class="form_row">
+                        <input type="text" class="form_input" placeholder="First name">
+                        <input type="text" class="form_input" placeholder="Last name">
+                    </div>
+
+                    <input type="text" class="form_input" placeholder="Address">
+                    <input type="text" class="form_input" placeholder="Apartment, suit, etc. (optional)">
+
+                    <div class="form_row">
+                        <input type="text" class="form_input" placeholder="Suburb">
+                        <input type="text" class="form_input" placeholder="state/territory">
+                        <input type="text" class="form_input" placeholder="Postcode">
+                    </div>
+
+                    <input type="text" class="form_input" placeholder="Phone">
+
+                    <label class="checkbox_row">
+                        <input type="checkbox"> Text with news and offers
+                    </label>
+
+                    <!--shipping method-->
+                    <h4 class="shipping_title">Shipping method</h4>
+                    <div class="shipping_box">Enter your shipping address to view available shipping method</div>
+
+
+                    <!--payment-->
+                    <div class="form_head">
+                        <h3>Payment</h3>
+                        <span>+</span>
+                    </div>
+                    <p class="payment_note">All transcation are secure and encrypted.</p>
+
+                    <a href="../HTML/success.html"><button class="pay_now">PAY NOW</button></a>
+                </section>
+
+                <!--=====rightside: order summary-->
+                <aside class="checkout_summary">
+
+                    <div class="cart_item">
+
+                        <img class="cart_item_img" src="../Image/product1/Antinol.png" alt="Antinol Plus">
+                        <div class="cart_item_info">
+
+                            <div class="cart_item_head">
+                                <h3 class="cart_item_name">Antinol Plus 720 capsules</h3>
+                                <p class="cart_item_price">$560</p>
+                            </div>
+
+                            <p class="cart_item_size"> Size: 720 capsules</p>
+
+                            <div class="cart_item_control">
+
+                                <div class="quantity_box">
+                                    <button class="qty_minus">-</button>
+                                    <input type="text" value="1">
+                                    <button class="qty_plus">+</button>
+                                </div>
+        
+                                <button class="cart_item_delete">
+                                    <img src="../Image/product1/delete.png" alt="delete">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="summary_box">
+
+                        <p class="discount_title">DISCOUNT CODE</p>
+
+                        <div class="discount_box">
+                            <input type="text">
+                            <button class="apply_btn">APPLY</button>
+                        </div>
+
+                        <div class="summary_row">
+                            <span>CART TOTAL</span>
+                            <span>$560</span>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+        
+        <!-- footer -->
+        <footer>
+            <h2>Join our Fur-mily!</h2>
+
+            <div class="footer_content">
+
+                <div class="footer_column contact_content">
+                                
+                    <div class="footer_logo_box">
+                        <img src="../Image/homepage_image/logo.png">
+                        <span>Furmacy</span>
+                    </div>
+
+                    <div class="contact_item">
+                        <img src="../Image/homepage_image/phone_icon.png">
+                        <p>(03) 0929 1034</p>
+                    </div>
+
+                    <div class="contact_item">
+                        <img src="../Image/homepage_image/email_icon.png">
+                        <p>info@petfurmacy.com.au</p>  
+                    </div>
+                    
+                    <div class="contact_item">
+                        <img src="../Image/homepage_image/time_icon.png">
+                        <p>
+                            Monday to Friday: 
+                            9:30-5pm<br>
+                            Sunday: 10:30-3pm<br>
+                            Closed on Saturday<br>
+                            and Public Holidays
+                        </p>
+                    </div>
+
+                    <h3 style="margin-bottom: 6%;">Get in touch</h3>
+
+                    <div class="social_icons">
+                        <img src="../Image/homepage_image/facebook.png">
+                        <img src="../Image/homepage_image/ig.png">
+                    </div>
+
+                </div>
+
+                <div class="footer_column">
+                    <h3>Customer Care</h3>
+                    <h4>FAQS</h4>
+                    <h4>Shipping and Return</h4>
+                </div>
+
+                <div class="footer_column">
+                    <h3>About us</h3>
+                    <h4>Our story</h4>
+                    <h4>Blog</h4>
+                    <h4>Contact us</h4>
+                </div>
+            
+                <div class="footer_column">
+                    <h3>Products</h3>
+                    <h4>DOGS</h4>
+                    <h4>CATS</h4>
+                    <h4>NEW ARRIVAL</h4>
+                    <h4>ON SALE</h4>
+                </div>
+
+            </div>
+            
+            <div class="footer_signup">
+                <input type="email" placeholder="Email">
+                <button>SIGN UP</button>
+            </div>
+        </footer>
+
+        <p class="copyright">© 2026, Pet Furmacy</p>
+    </body>
