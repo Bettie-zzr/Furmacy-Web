@@ -48,6 +48,18 @@ if (itemsBox) {
     });
 }
 
+/*-------- red dot on cart icon --------------------*/
+function updateCartDot () {
+    var dot = document.querySelector('.cart_badge');
+    if (!dot) return;
+    if (getCart().length > 0) {
+        dot.classList.add('is_visible');
+    } else {
+        dot.classList.remove('is_visible');
+    }
+}
+updateCartDot();
+
 
 /*--------- add to cart + cart pop up page ----------*/
 var addBtn = document.querySelector(' .add_to_cart');
@@ -63,6 +75,7 @@ if (addBtn) {
             qty: Number(qtyInput.value) || 1
         });
         saveCart(cart);
+        updateCartDot();
 
         if (itemsBox) renderItemsInto(itemsBox);
         document.querySelector(' .cart_popup').classList.add('is_open');
@@ -92,4 +105,5 @@ var successText = document.querySelector('.success_text');
 if (successText) {
     successText.textContent = 'Successfully paid $' + cartTotal();
     localStorage.removeItem('cart');
+    updateCartDot();
 }
