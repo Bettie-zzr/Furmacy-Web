@@ -1,18 +1,18 @@
 /*------ localStorage ------*/
 function getCart() {
-    return JSON.parse(localStorage.getItem('cart')) || []
-}
+    return JSON.parse(localStorage.getItem('cart')) || []//if there nothing in cart
+} //read cart for the local storage, Json: store cart data into array
 
 function saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
-}
+}//upadate the cart after users add items or change quantity
 
 function cartTotal() {
     return getCart().reduce(function (sum, item) {
         return sum + item.price * item.qty;
-    }, 0);
+    }, 0); //calculate the total price of all product 
 }
-/*--------put cart info to cart--------*/
+/*--------put cart items into different pages, avoid repeated html-------*/
 function renderItemsInto(box) {
     box.innerHTML = getCart().map(function (item) {
         return `
