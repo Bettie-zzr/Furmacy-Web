@@ -283,3 +283,54 @@
     background-color: #F57CB6;
 }
 
+/*=============phone 480=============*/
+@media (max-width: 480px) {
+
+    .product1_page,
+    .product2_page {
+        padding: 4% 5%;
+    }
+
+    .product_section {
+        flex-direction: column;
+        gap: 4%;
+    }
+
+    .product_image,
+    .product {
+        width: 100%;
+    }
+
+    .product_image img {
+        width: 70%;
+    }
+
+    .product_title {
+        font-size: 28px;
+    }
+
+    .product_price {
+        font-size: 22px;
+    }
+
+    .quantity_box {
+        width: 70%;
+    }
+
+    .add_to_cart {
+        width: 100%;
+    }
+
+    .more_detail summary {
+        font-size: 24px;
+    }
+
+    .more_detail summary::after {
+        font-size: 24px;
+    }
+
+    .cart_popup {
+        width: 100%;
+        top: 0;
+    }
+}
