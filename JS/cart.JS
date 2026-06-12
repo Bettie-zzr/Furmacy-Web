@@ -107,3 +107,12 @@ if (successText) {
     localStorage.removeItem('cart');
     updateCartDot();
 }
+
+/*--- close in mobile, open in laptop------*/
+function syncOrderSummary() {
+    const d = document.querySelector('.checkout_summary');
+    if (!d) return;
+    d.open = !window.matchMedia('(max-width: 480px)').matches;
+}
+syncOrderSummary();
+window.addEventListener('resize', syncOrderSummary);

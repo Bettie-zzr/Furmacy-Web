@@ -291,7 +291,7 @@ footer h2 {
     }
 }
 
-/*=============phone 480：header + footer=============*/
+/*=============phone 480：header + footer + path meunu=============*/
 @media (max-width: 480px) {
 
     /* header */
@@ -395,5 +395,15 @@ footer h2 {
 
     .footer_column:not(.contact_content) h3::after {
         content: "+";
+    }
+
+    .breadcrumb ul {
+        flex-wrap: wrap;
+        row-gap: 4px;
+        font-size: 12px;
+    }
+
+    .breadcrumb li {
+        white-space: nowrap;
     }
 }
