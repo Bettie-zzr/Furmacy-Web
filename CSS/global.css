@@ -297,7 +297,7 @@ footer h2 {
     /* header */
     .menu_icon {
         display: block;
-        font-size: 28px;
+        width: 20px;
         cursor: pointer;
     }
 

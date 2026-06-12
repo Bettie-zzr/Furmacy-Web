@@ -26,3 +26,23 @@
     color: #1C6EEF;
     text-decoration: underline;
 }
+
+/*=============phone 480=============*/
+@media (max-width: 480px) {
+
+    .success_icon {
+        width: 120px;
+    }
+
+    .success_title {
+        font-size: 28px;
+    }
+
+    .success_text {
+        font-size: 16px;
+    }
+
+    .back_home {
+        font-size: 18px;
+    }
+}
