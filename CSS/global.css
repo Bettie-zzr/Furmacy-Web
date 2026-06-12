@@ -11,6 +11,13 @@ header {
     width: 100%;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    background-color: #ffffff;
+}
+
 .first_row {
     height: 32px;
     background-color: #1C6EEF;

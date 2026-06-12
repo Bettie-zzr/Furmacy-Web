@@ -167,7 +167,7 @@
 .cart_popup {
     display: none;
     position: fixed;
-    top: 17%;
+    top: 144px;
     right: 0%;
     bottom: 0%;
     width: 32%;
@@ -283,6 +283,10 @@
     background-color: #F57CB6;
 }
 
+.cart_popup_head {
+    display: none;
+}
+
 /*=============phone 480=============*/
 @media (max-width: 480px) {
 
@@ -331,6 +335,35 @@
 
     .cart_popup {
         width: 100%;
-        top: 0;
+        top: 50px;
+    }
+
+    .cart_popup_head {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 6%;
+    }
+
+    .cart_popup_head h2 {
+        font-family: 'Acme', sans-serif;
+        font-size: 28px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .cart_close {
+        position: absolute;
+        right: 0;
+        background-color: #1C6EEF;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        cursor: pointer;
+        flex-shrink: 0;
     }
 }

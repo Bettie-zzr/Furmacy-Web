@@ -336,3 +336,30 @@
     font-family: 'Acme', sans-serif;
     font-size: 18px;
 }
+
+/*=============phone 480=============*/
+@media (max-width: 480px) {
+
+    .checkout_page {
+        padding: 4% 5%;
+    }
+
+    .checkout_layout {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .checkout_form,
+    .checkout_summary {
+        width: 100%;
+    }
+
+    .checkout_form {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .checkout_summary {
+        margin-top: 6%;
+    }
+}

@@ -17,6 +17,7 @@
 }
 
 .cart_item {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     width: 60%;
@@ -115,6 +116,7 @@
 
 /*price summary*/
 .cart_summary {
+    box-sizing: border-box;
     margin: 0 auto;
 
     width: 60%;
@@ -146,4 +148,53 @@
     font-family: 'Acme', sans-serif;
     font-size: 28px;
     text-decoration: none;
+}
+
+/*=============phone 480=============*/
+@media (max-width: 480px) {
+
+    .cart_page {
+        padding: 4% 5%;
+    }
+
+    .page_title {
+        font-size: 32px;
+    }
+
+    .cart_item {
+        width: 100%;
+        padding: 3%;
+    }
+
+    .cart_item_img {
+        width: 22%;
+    }
+
+    .cart_item_name {
+        font-size: 18px;
+    }
+
+    .cart_item_price {
+        font-size: 18px;
+    }
+
+    .cart_item_size {
+        font-size: 14px;
+    }
+
+    .quantity_box {
+        width: 45%;
+    }
+
+    .cart_summary {
+        width: 100%;
+    }
+
+    .summary_row {
+        font-size: 20px;
+    }
+
+    .checkout_btn {
+        width: 100%;
+    }
 }
