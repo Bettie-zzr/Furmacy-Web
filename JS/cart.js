@@ -14,7 +14,7 @@ function cartTotal() {
 }
 /*--------put cart items into different pages, avoid repeated html-------*/
 function renderItemsInto(box) {
-    box.innerHTML = getCart().map(function (item) {
+    box.innerHTML = getCart().map(function (item, i) {
         return `
             <div class="cart_item">
                 <img class="cart_item_img" src="${item.image}" alt="${item.name}">
@@ -30,7 +30,7 @@ function renderItemsInto(box) {
                             <input type="text" value="${item.qty}">
                             <button class="qty_plus">+</button>
                         </div>
-                        <button class="cart_item_delete">
+                        <button class="cart_item_delete" data-index="${i}">
                             <img src="../Image/product1/delete.png" alt="delete">
                         </button>
                     </div>
@@ -39,18 +39,21 @@ function renderItemsInto(box) {
     }).join('');
 }
 
-/*--------- add .cart_items to related pages ---------*/
-var itemsBox = document.querySelector('.cart_items');
-if (itemsBox) {
-    renderItemsInto(itemsBox);
-    document.querySelectorAll('.summary_row span:last-child').forEach(function(el) {
+/*--------- refresh afer delete -----------------------*/
+function refreshTotals() {
+    document.querySelectorAll('.summary_row span:last-child').forEach(function (el) {
         el.textContent = '$' + cartTotal();
     });
-
     var summaryAmount = document.querySelector('.summary_amount');
     if (summaryAmount) {
         summaryAmount.textContent = '$' + cartTotal();
     }
+}
+
+var itemsBox = document.querySelector('.cart_items');
+if (itemsBox) {
+    renderItemsInto(itemsBox);
+    refreshTotals();
 }
 
 /*-------- red dot on cart icon --------------------*/
@@ -121,3 +124,18 @@ function syncOrderSummary() {
 }
 syncOrderSummary();
 window.addEventListener('resize', syncOrderSummary);
+
+/*---------click to delete ----------*/
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.cart_item_delete');
+    if (!btn) return;
+
+    var cart = getCart();
+    cart.splice(Number(btn.dataset.index), 1);
+    saveCart(cart);
+
+    var box = document.querySelector('.cart_items');
+    if (box) renderItemsInto(box);
+    refreshTotals();                 
+    updateCartDot();                 
+});
