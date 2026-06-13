@@ -26,9 +26,9 @@ function renderItemsInto(box) {
                     <p class="cart_item_size">Size: ${item.size}</p>
                     <div class="cart_item_control">
                         <div class="quantity_box">
-                            <button class="qty_minus">-</button>
+                            <button class="qty_minus" data-index="${i}">-</button>
                             <input type="text" value="${item.qty}">
-                            <button class="qty_plus">+</button>
+                            <button class="qty_plus" data-index="${i}">+</button>
                         </div>
                         <button class="cart_item_delete" data-index="${i}">
                             <img src="../Image/product1/delete.png" alt="delete">
@@ -39,7 +39,7 @@ function renderItemsInto(box) {
     }).join('');
 }
 
-/*--------- refresh afer delete -----------------------*/
+/*--------- update all totalsv-----------------------*/
 function refreshTotals() {
     document.querySelectorAll('.summary_row span:last-child').forEach(function (el) {
         el.textContent = '$' + cartTotal();
@@ -74,14 +74,24 @@ var addBtn = document.querySelector(' .add_to_cart');
 if (addBtn) {
     addBtn.addEventListener('click', function() {
         var qtyInput = document.querySelector(' .product_size .quantity_box input');
+        var qty = Number(qtyInput.value) || 1;
         var cart = getCart();
-        cart.push({
-            name: addBtn.dataset.name,
-            price: Number(addBtn.dataset.price),
-            size: addBtn.dataset.size,
-            image: addBtn.dataset.image,
-            qty: Number(qtyInput.value) || 1
+
+        var existing = cart.find(function (item) {
+            return item.name === addBtn.dataset.name && item.size === addBtn.dataset.size;
         });
+        if (existing) {
+            existing.qty += qty;                 // same
+        } else {
+            cart.push({                          // new
+                name: addBtn.dataset.name,
+                price: Number(addBtn.dataset.price),
+                size: addBtn.dataset.size,
+                image: addBtn.dataset.image,
+                qty: qty
+            });
+        }
+
         saveCart(cart);
         updateCartDot();
 
@@ -139,3 +149,37 @@ document.addEventListener('click', function (e) {
     refreshTotals();                 
     updateCartDot();                 
 });
+
+/*-------- quantity +/- inside the cart --------*/
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.qty_plus, .qty_minus');
+    if (!btn || btn.dataset.index === undefined) return;  
+
+    var index = Number(btn.dataset.index);
+    var cart = getCart();
+
+    if (btn.classList.contains('qty_plus')) {
+        cart[index].qty += 1;
+    } else {
+        cart[index].qty -= 1;
+        if (cart[index].qty < 1) cart.splice(index, 1);
+    }
+    saveCart(cart);
+
+    var box = document.querySelector('.cart_items');
+    if (box) renderItemsInto(box);
+    refreshTotals();
+    updateCartDot();
+});
+
+/*-------- product page: quantity selector before adding --------*/
+var pBox = document.querySelector('.product_size .quantity_box');
+if (pBox) {
+    var pInput = pBox.querySelector('input');
+    pBox.querySelector('.qty_plus').addEventListener('click', function () {
+        pInput.value = Number(pInput.value) + 1;
+    });
+    pBox.querySelector('.qty_minus').addEventListener('click', function () {
+        if (Number(pInput.value) > 1) pInput.value = Number(pInput.value) - 1;
+    });
+}
