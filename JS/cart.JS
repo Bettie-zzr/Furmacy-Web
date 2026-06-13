@@ -46,6 +46,11 @@ if (itemsBox) {
     document.querySelectorAll('.summary_row span:last-child').forEach(function(el) {
         el.textContent = '$' + cartTotal();
     });
+
+    var summaryAmount = document.querySelector('.summary_amount');
+    if (summaryAmount) {
+        summaryAmount.textContent = '$' + cartTotal();
+    }
 }
 
 /*-------- red dot on cart icon --------------------*/

@@ -411,9 +411,29 @@ details[open] .summary_label::after {
         padding-right: 0;
     }
 
+    .express_label {
+        padding: 4%;
+    }
+
+    .form_head {
+        margin-top: 5px;
+        padding: 4% 0%;
+    }
+
+    .shipping_title {
+        margin-top: 5px;
+        padding: 4% 0%;
+    }
+
     .checkout_summary {
         margin-top: 6%;
     }
+
+    .pay_now {
+        font-size:24px;
+        font-weight: 0;
+    }
+
 
     .checkout_summary {
         order: -1;
